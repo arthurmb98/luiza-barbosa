@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { siteConfig } from '@/config/site'
 import type { Profile } from '@/types/profile'
 import { About } from '@/components/About'
 import { Hero } from '@/components/Hero'
@@ -23,12 +24,16 @@ export function ProfilePage({ profile }: ProfilePageProps) {
     <div className="pb-8">
       <header className="absolute left-0 right-0 top-0 z-20">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-5 sm:px-8">
-          <Link
-            to="/profissionais"
-            className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
-          >
-            Perfis
-          </Link>
+          {siteConfig.homeProfileSlug ? (
+            <span aria-hidden className="w-12" />
+          ) : (
+            <Link
+              to="/profissionais"
+              className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+            >
+              Perfis
+            </Link>
+          )}
           <span className="rounded-full bg-elevated/80 px-3 py-1 text-xs font-medium uppercase tracking-wider text-primary backdrop-blur">
             {profile.registry.type}
           </span>
