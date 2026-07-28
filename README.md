@@ -92,8 +92,24 @@ Na versão atual, os leads ficam salvos no `localStorage` do navegador (`perfil-
 
 ## Rotas
 
-- `/` — lista de profissionais
+- `/` — página inicial (diretório de profissionais ou um perfil específico, conforme `src/config/site.ts`)
+- `/profissionais` — lista de profissionais
 - `/:slug` — página do profissional
+
+### Home por branch
+
+O arquivo `src/config/site.ts` define se a home abre um perfil direto:
+
+```ts
+export const siteConfig = {
+  homeProfileSlug: 'luiza-barbosa' as string | null,
+}
+```
+
+- `null` — `/` mostra a lista (uso típico em `master`)
+- `'slug'` — `/` abre o perfil correspondente (uso típico em `feature/<slug>`)
+
+O restante do código é compartilhado entre as branches para facilitar merges.
 
 ## Stack
 

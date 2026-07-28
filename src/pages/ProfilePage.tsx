@@ -24,7 +24,7 @@ export function ProfilePage({ profile }: ProfilePageProps) {
       <header className="absolute left-0 right-0 top-0 z-20">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-5 sm:px-8">
           <Link
-            to="/"
+            to="/profissionais"
             className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
           >
             Perfis
