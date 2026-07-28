@@ -7,5 +7,5 @@
  * - `'slug'` → `/` opens that profile (typical on `feature/<slug>`)
  */
 export const siteConfig = {
-  homeProfileSlug: null as string | null,
+  homeProfileSlug: 'luiza-barbosa' as string | null,
 }
