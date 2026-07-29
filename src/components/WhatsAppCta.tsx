@@ -39,8 +39,24 @@ export function WhatsAppCta({
             {profile.name}.
           </p>
           <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
-            {profile.instagram ? <span>@{profile.instagram}</span> : null}
-            {profile.email ? <span>{profile.email}</span> : null}
+            {profile.instagram ? (
+              <a
+                href={`https://instagram.com/${profile.instagram}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold transition-colors hover:text-primary"
+              >
+                @{profile.instagram}
+              </a>
+            ) : null}
+            {profile.email ? (
+              <a
+                href={`mailto:${profile.email}`}
+                className="transition-colors hover:text-primary"
+              >
+                {profile.email}
+              </a>
+            ) : null}
           </div>
         </div>
         <Button variant="whatsapp" size="lg" onClick={onContact}>

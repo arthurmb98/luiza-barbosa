@@ -18,5 +18,5 @@ export const luizaBarbosa: Profile = {
   whatsapp: '5598981263501',
   whatsappMessage: 'Olá, Dra. Luiza! Vi seu perfil e gostaria de agendar uma conversa.',
   email: 'luizatinoco2606@gmail.com',
-  instagram: 'luizabarbosa.psi',
+  instagram: 'psi_luizabarbosa',
 }
