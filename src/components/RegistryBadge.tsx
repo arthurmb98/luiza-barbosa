@@ -13,7 +13,7 @@ export function RegistryBadge({ registry }: RegistryBadgeProps) {
       : `Validação ${registry.type}`)
 
   return (
-    <section className="mx-auto flex max-w-5xl flex-col gap-4 px-5 py-14 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:px-8">
+    <section className="mx-auto flex max-w-5xl flex-col gap-4 px-5 py-10 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:px-8">
       <div className="min-w-0">
         <h2 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">
           Registro profissional
