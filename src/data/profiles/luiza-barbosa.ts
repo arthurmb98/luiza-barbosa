@@ -11,7 +11,7 @@ export const luizaBarbosa: Profile = {
   photo: '/photos/luiza-barbosa.jpeg',
   registry: {
     type: 'RNTP',
-    number: '6963534',
+    number: 'RNTP6963534',
     qrCode: '/qrcodes/RNTP_LUIZA.png',
     qrCodeLabel: 'Validação RNTP',
   },

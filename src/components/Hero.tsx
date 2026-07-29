@@ -33,7 +33,7 @@ export function Hero({ profile, onContact }: HeroProps) {
         <div className="mt-8 animate-fade-up [animation-delay:320ms]">
           <Button variant="whatsapp" size="lg" onClick={onContact}>
             <MessageCircle className="size-5" />
-            Falar no WhatsApp
+            Agendar atendimento
           </Button>
         </div>
       </div>
