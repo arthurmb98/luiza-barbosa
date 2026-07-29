@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import { Navigate, Route, Routes, useParams } from 'react-router-dom'
 import { siteConfig } from '@/config/site'
 import { getProfileBySlug } from '@/data/profiles'
@@ -28,10 +29,13 @@ function ProfileRoute() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomeRoute />} />
-      <Route path="/profissionais" element={<HomePage />} />
-      <Route path="/:slug" element={<ProfileRoute />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<HomeRoute />} />
+        <Route path="/profissionais" element={<HomePage />} />
+        <Route path="/:slug" element={<ProfileRoute />} />
+      </Routes>
+      <Analytics />
+    </>
   )
 }
