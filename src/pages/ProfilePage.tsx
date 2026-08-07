@@ -1,10 +1,9 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { siteConfig } from '@/config/site'
 import type { Profile } from '@/types/profile'
+import { buildWhatsAppUrl } from '@/lib/utils'
 import { About } from '@/components/About'
 import { Hero } from '@/components/Hero'
-import { LeadCaptureSheet } from '@/components/LeadCaptureSheet'
 import { RegistryBadge } from '@/components/RegistryBadge'
 import { Specialties } from '@/components/Specialties'
 import { WhatsAppCta } from '@/components/WhatsAppCta'
@@ -14,10 +13,9 @@ type ProfilePageProps = {
 }
 
 export function ProfilePage({ profile }: ProfilePageProps) {
-  const [sheetOpen, setSheetOpen] = useState(false)
-
   function openContact() {
-    setSheetOpen(true)
+    const url = buildWhatsAppUrl(profile.whatsapp, profile.whatsappMessage)
+    window.open(url, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -46,12 +44,6 @@ export function ProfilePage({ profile }: ProfilePageProps) {
       <RegistryBadge registry={profile.registry} />
       <WhatsAppCta profile={profile} onContact={openContact} />
       <WhatsAppCta profile={profile} onContact={openContact} floating />
-
-      <LeadCaptureSheet
-        profile={profile}
-        open={sheetOpen}
-        onOpenChange={setSheetOpen}
-      />
     </div>
   )
 }
