@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { siteConfig } from '@/config/site'
 import type { Profile } from '@/types/profile'
+import { trackWhatsAppConversion } from '@/lib/ads'
 import { buildWhatsAppUrl } from '@/lib/utils'
 import { About } from '@/components/About'
 import { Hero } from '@/components/Hero'
@@ -15,7 +16,11 @@ type ProfilePageProps = {
 export function ProfilePage({ profile }: ProfilePageProps) {
   function openContact() {
     const url = buildWhatsAppUrl(profile.whatsapp, profile.whatsappMessage)
-    window.open(url, '_blank', 'noopener,noreferrer')
+    trackWhatsAppConversion({
+      onTracked: () => {
+        window.open(url, '_blank', 'noopener,noreferrer')
+      },
+    })
   }
 
   return (

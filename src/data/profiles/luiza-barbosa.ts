@@ -5,9 +5,16 @@ export const luizaBarbosa: Profile = {
   name: 'Dra. Luiza Barbosa',
   profession: 'Psicóloga',
   tagline: 'Acolhimento e clareza para cada fase da vida',
-  specialties: ['Psicanálise', 'Psicoterapia', 'Psicologia clínica'],
+  specialties: [
+    'Psicoterapia',
+    'Ansiedade e estresse',
+    'Psicologia clínica',
+    'Avaliação e laudos',
+    'Perícia psicológica',
+    'Psicologia forense',
+  ],
   about:
-    'Atendo crianças, adolescentes e adultos em um espaço seguro e sem julgamentos. Meu trabalho une escuta ativa e ferramentas práticas da Terapia Cognitivo-Comportamental para lidar com ansiedade, relações e momentos de transição. O objetivo é que você saia de cada sessão com mais clareza e leveza.',
+    'Atendo crianças, adolescentes e adultos em um espaço seguro e sem julgamentos. Trabalho com escuta ativa e ferramentas práticas para lidar com ansiedade no dia a dia, dificuldade para dormir, cansaço mental, relações e momentos de transição — para que você saia de cada sessão com mais clareza e leveza. Também atuo com avaliação psicológica, elaboração de laudos e perícia, com experiência em psicologia forense criminal, sempre com rigor técnico e ética profissional.',
   photo: '/photos/luiza-barbosa.jpeg',
   registry: {
     type: 'RNTP',
