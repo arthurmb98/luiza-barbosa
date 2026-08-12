@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:api": "vercel dev",
+    "dev:api": "vercel dev --listen 3001 --yes",
+    "dev:all": "sh -c 'npm run dev:api & api_pid=$!; trap \"kill $api_pid 2>/dev/null\" EXIT; npm run dev'",
     "build": "tsc -b && vite build",
     "typecheck:server": "tsc -p tsconfig.server.json",
     "lint": "oxlint",
