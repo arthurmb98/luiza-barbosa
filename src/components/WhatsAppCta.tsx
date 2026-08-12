@@ -61,14 +61,24 @@ export function WhatsAppCta({
             ) : null}
           </div>
         </div>
-        <div className="flex flex-col gap-3 sm:items-end">
+        <div className="flex w-full flex-col gap-3 sm:w-64">
           {onOpenAnamnesis ? (
-            <Button variant="outline" size="lg" onClick={onOpenAnamnesis}>
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full"
+              onClick={onOpenAnamnesis}
+            >
               <ClipboardList className="size-5" />
               Anamnese online
             </Button>
           ) : null}
-          <Button variant="whatsapp" size="lg" onClick={onContact}>
+          <Button
+            variant="whatsapp"
+            size="lg"
+            className="w-full"
+            onClick={onContact}
+          >
             <MessageCircle className="size-5" />
             Falar no WhatsApp
           </Button>
