@@ -1,6 +1,6 @@
-import type { AnamnesisPayload, NotificationChannelResult } from '../domain/types'
-import { AnamnesisNotificationError } from '../domain/errors'
-import type { WhatsAppMessage, WhatsAppNotifier } from '../application/ports'
+import type { AnamnesisPayload, NotificationChannelResult } from '../domain/types.js'
+import { AnamnesisNotificationError } from '../domain/errors.js'
+import type { WhatsAppMessage, WhatsAppNotifier } from '../application/ports.js'
 
 type WhatsAppCloudConfig = {
   token: string

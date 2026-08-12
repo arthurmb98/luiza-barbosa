@@ -1,4 +1,4 @@
-import type { AnamnesisPayload, NotificationChannelResult } from '../domain/types'
+import type { AnamnesisPayload, NotificationChannelResult } from '../domain/types.js'
 
 export type EmailMessage = {
   subject: string

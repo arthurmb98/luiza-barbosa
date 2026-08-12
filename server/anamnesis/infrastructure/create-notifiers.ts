@@ -1,7 +1,7 @@
-import type { EmailNotifier, WhatsAppNotifier } from '../application/ports'
-import { ConsoleEmailNotifier, ConsoleWhatsAppNotifier } from './console-notifiers'
-import { ResendEmailNotifier } from './resend-email-notifier'
-import { WhatsAppCloudNotifier } from './whatsapp-cloud-notifier'
+import type { EmailNotifier, WhatsAppNotifier } from '../application/ports.js'
+import { ConsoleEmailNotifier, ConsoleWhatsAppNotifier } from './console-notifiers.js'
+import { ResendEmailNotifier } from './resend-email-notifier.js'
+import { WhatsAppCloudNotifier } from './whatsapp-cloud-notifier.js'
 
 export type NotifierBundle = {
   emailNotifier: EmailNotifier

@@ -1,8 +1,8 @@
-import type { AnamnesisPayload, SubmitAnamnesisResult } from '../domain/types'
-import { AnamnesisNotificationError } from '../domain/errors'
-import type { EmailNotifier, WhatsAppNotifier } from './ports'
-import { formatEmailMessage, formatWhatsAppMessage } from './format-message'
-import { parseAndValidateAnamnesisPayload } from './validate-payload'
+import type { AnamnesisPayload, SubmitAnamnesisResult } from '../domain/types.js'
+import { AnamnesisNotificationError } from '../domain/errors.js'
+import type { EmailNotifier, WhatsAppNotifier } from './ports.js'
+import { formatEmailMessage, formatWhatsAppMessage } from './format-message.js'
+import { parseAndValidateAnamnesisPayload } from './validate-payload.js'
 
 type Dependencies = {
   emailNotifier: EmailNotifier

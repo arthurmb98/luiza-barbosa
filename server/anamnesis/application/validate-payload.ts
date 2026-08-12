@@ -1,5 +1,5 @@
-import type { AnamnesisPayload, PersonIdentification } from '../domain/types'
-import { AnamnesisValidationError } from '../domain/errors'
+import type { AnamnesisPayload, PersonIdentification } from '../domain/types.js'
+import { AnamnesisValidationError } from '../domain/errors.js'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const FIXED_CITY = 'São Luís - MA'

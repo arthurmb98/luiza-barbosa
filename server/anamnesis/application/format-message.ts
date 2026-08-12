@@ -1,5 +1,5 @@
-import type { AnamnesisPayload, PersonIdentification } from '../domain/types'
-import type { EmailMessage, WhatsAppMessage } from './ports'
+import type { AnamnesisPayload, PersonIdentification } from '../domain/types.js'
+import type { EmailMessage, WhatsAppMessage } from './ports.js'
 
 const WHATSAPP_MAX_CHARS = 3500
 

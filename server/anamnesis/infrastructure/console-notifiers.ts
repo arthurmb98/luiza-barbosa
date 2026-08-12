@@ -1,5 +1,5 @@
-import type { AnamnesisPayload, NotificationChannelResult } from '../domain/types'
-import type { EmailMessage, EmailNotifier, WhatsAppMessage, WhatsAppNotifier } from '../application/ports'
+import type { AnamnesisPayload, NotificationChannelResult } from '../domain/types.js'
+import type { EmailMessage, EmailNotifier, WhatsAppMessage, WhatsAppNotifier } from '../application/ports.js'
 
 export class ConsoleEmailNotifier implements EmailNotifier {
   async send(
