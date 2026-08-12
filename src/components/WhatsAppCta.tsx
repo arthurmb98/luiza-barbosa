@@ -1,16 +1,18 @@
-import { MessageCircle } from 'lucide-react'
+import { ClipboardList, MessageCircle } from 'lucide-react'
 import type { Profile } from '@/types/profile'
 import { Button } from '@/components/ui/button'
 
 type WhatsAppCtaProps = {
   profile: Profile
   onContact: () => void
+  onOpenAnamnesis?: () => void
   floating?: boolean
 }
 
 export function WhatsAppCta({
   profile,
   onContact,
+  onOpenAnamnesis,
   floating = false,
 }: WhatsAppCtaProps) {
   if (floating) {
@@ -59,10 +61,18 @@ export function WhatsAppCta({
             ) : null}
           </div>
         </div>
-        <Button variant="whatsapp" size="lg" onClick={onContact}>
-          <MessageCircle className="size-5" />
-          Falar no WhatsApp
-        </Button>
+        <div className="flex flex-col gap-3 sm:items-end">
+          {onOpenAnamnesis ? (
+            <Button variant="outline" size="lg" onClick={onOpenAnamnesis}>
+              <ClipboardList className="size-5" />
+              Anamnese online
+            </Button>
+          ) : null}
+          <Button variant="whatsapp" size="lg" onClick={onContact}>
+            <MessageCircle className="size-5" />
+            Falar no WhatsApp
+          </Button>
+        </div>
       </div>
     </section>
   )

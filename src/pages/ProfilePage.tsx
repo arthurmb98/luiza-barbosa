@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { siteConfig } from '@/config/site'
 import type { Profile } from '@/types/profile'
 import { trackWhatsAppConversion } from '@/lib/ads'
 import { buildWhatsAppUrl } from '@/lib/utils'
 import { About } from '@/components/About'
+import { AnamnesisSheet } from '@/components/anamnesis/AnamnesisSheet'
 import { Hero } from '@/components/Hero'
 import { RegistryBadge } from '@/components/RegistryBadge'
 import { Specialties } from '@/components/Specialties'
@@ -14,6 +16,8 @@ type ProfilePageProps = {
 }
 
 export function ProfilePage({ profile }: ProfilePageProps) {
+  const [anamnesisOpen, setAnamnesisOpen] = useState(false)
+
   function openContact() {
     const url = buildWhatsAppUrl(profile.whatsapp, profile.whatsappMessage)
     trackWhatsAppConversion({
@@ -43,12 +47,21 @@ export function ProfilePage({ profile }: ProfilePageProps) {
         </div>
       </header>
 
-      <Hero profile={profile} onContact={openContact} />
+      <Hero
+        profile={profile}
+        onContact={openContact}
+        onOpenAnamnesis={() => setAnamnesisOpen(true)}
+      />
       <Specialties specialties={profile.specialties} />
       <About about={profile.about} />
       <RegistryBadge registry={profile.registry} />
-      <WhatsAppCta profile={profile} onContact={openContact} />
+      <WhatsAppCta
+        profile={profile}
+        onContact={openContact}
+        onOpenAnamnesis={() => setAnamnesisOpen(true)}
+      />
       <WhatsAppCta profile={profile} onContact={openContact} floating />
+      <AnamnesisSheet open={anamnesisOpen} onOpenChange={setAnamnesisOpen} />
     </div>
   )
 }

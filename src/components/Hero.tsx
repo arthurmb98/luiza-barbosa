@@ -1,13 +1,14 @@
-import { MessageCircle } from 'lucide-react'
+import { ClipboardList, MessageCircle } from 'lucide-react'
 import type { Profile } from '@/types/profile'
 import { Button } from '@/components/ui/button'
 
 type HeroProps = {
   profile: Profile
   onContact: () => void
+  onOpenAnamnesis: () => void
 }
 
-export function Hero({ profile, onContact }: HeroProps) {
+export function Hero({ profile, onContact, onOpenAnamnesis }: HeroProps) {
   return (
     <section className="relative isolate min-h-[88dvh] overflow-hidden">
       <img
@@ -30,10 +31,14 @@ export function Hero({ profile, onContact }: HeroProps) {
             {profile.tagline}
           </p>
         ) : null}
-        <div className="mt-8 animate-fade-up [animation-delay:320ms]">
+        <div className="mt-8 flex animate-fade-up flex-col gap-3 sm:flex-row sm:items-center [animation-delay:320ms]">
           <Button variant="whatsapp" size="lg" onClick={onContact}>
             <MessageCircle className="size-5" />
             Agendar atendimento
+          </Button>
+          <Button variant="outline" size="lg" onClick={onOpenAnamnesis}>
+            <ClipboardList className="size-5" />
+            Anamnese online
           </Button>
         </div>
       </div>
