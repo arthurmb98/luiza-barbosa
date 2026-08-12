@@ -1,6 +1,7 @@
 import type { AnamnesisPayload, SubmitAnamnesisResult } from '../domain/types.js'
 import { AnamnesisNotificationError } from '../domain/errors.js'
 import type { EmailNotifier, WhatsAppNotifier } from './ports.js'
+import { buildAnamnesisPdf, bytesToBase64 } from './build-anamnesis-pdf.js'
 import { formatEmailMessage, formatWhatsAppMessage } from './format-message.js'
 import { parseAndValidateAnamnesisPayload } from './validate-payload.js'
 
@@ -15,6 +16,15 @@ export function createSubmitAnamnesisUseCase(deps: Dependencies) {
       const payload: AnamnesisPayload = parseAndValidateAnamnesisPayload(input)
       const emailMessage = formatEmailMessage(payload)
       const whatsappMessage = formatWhatsAppMessage(payload)
+      const pdf = await buildAnamnesisPdf(payload)
+
+      emailMessage.attachments = [
+        {
+          filename: pdf.filename,
+          contentBase64: bytesToBase64(pdf.bytes),
+          contentType: 'application/pdf',
+        },
+      ]
 
       try {
         const [email, whatsapp] = await Promise.all([

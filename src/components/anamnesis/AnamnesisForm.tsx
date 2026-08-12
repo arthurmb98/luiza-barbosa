@@ -300,11 +300,6 @@ export function AnamnesisForm({ onSuccess }: AnamnesisFormProps) {
             rows={3}
           />
 
-          <p className="rounded-2xl bg-muted-surface/50 px-4 py-3 text-sm text-muted-foreground">
-            Atendimento em {FIXED_CITY} · data e hora registradas automaticamente no
-            envio.
-          </p>
-
           <label className="flex cursor-pointer items-start gap-3 rounded-2xl border border-border px-4 py-3">
             <input
               type="checkbox"

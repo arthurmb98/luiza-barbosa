@@ -19,6 +19,12 @@ export class ResendEmailNotifier implements EmailNotifier {
     message: EmailMessage,
     _payload: AnamnesisPayload,
   ): Promise<NotificationChannelResult> {
+    const attachments = (message.attachments ?? []).map((item) => ({
+      filename: item.filename,
+      content: item.contentBase64,
+      content_type: item.contentType ?? 'application/pdf',
+    }))
+
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -31,6 +37,7 @@ export class ResendEmailNotifier implements EmailNotifier {
         subject: message.subject,
         text: message.text,
         html: message.html,
+        ...(attachments.length > 0 ? { attachments } : {}),
       }),
     })
 

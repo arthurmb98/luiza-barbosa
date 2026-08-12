@@ -1,9 +1,16 @@
 import type { AnamnesisPayload, NotificationChannelResult } from '../domain/types.js'
 
+export type EmailAttachment = {
+  filename: string
+  contentBase64: string
+  contentType?: string
+}
+
 export type EmailMessage = {
   subject: string
   text: string
   html: string
+  attachments?: EmailAttachment[]
 }
 
 export type WhatsAppMessage = {
