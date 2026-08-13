@@ -3,9 +3,9 @@ import {
   AnamnesisNotificationError,
   AnamnesisValidationError,
 } from '../../server/anamnesis/domain/errors.js'
-import { createSubmitAnamnesisUseCase } from '../../server/anamnesis/application/submit-anamnesis.js'
-import { createNotifiers } from '../../server/anamnesis/infrastructure/create-notifiers.js'
-import { isRateLimited } from '../../server/anamnesis/infrastructure/rate-limit.js'
+import { createSubmitAnamnesisUseCase } from '../../server/anamnesis/application/use-cases/submit-anamnesis.js'
+import { createNotifiers } from '../../server/anamnesis/infrastructure/composition/create-notifiers.js'
+import { isRateLimited } from '../../server/anamnesis/infrastructure/http/rate-limit.js'
 
 function clientIp(req: VercelRequest): string {
   const forwarded = req.headers['x-forwarded-for']
