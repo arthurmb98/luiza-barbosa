@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { submitAnamnesis } from '@/features/anamnesis/application/api-client'
+import { trackAnamnesisConversion } from '@/features/ads/application/track-conversions'
 import {
   EVOLUTION_OPTIONS,
   FIXED_CITY,
@@ -76,6 +77,7 @@ export function AnamnesisForm({ onSuccess }: AnamnesisFormProps) {
         setSubmitError(result.error)
         return
       }
+      trackAnamnesisConversion()
       onSuccess()
     } catch {
       setSubmitError(

@@ -2,10 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { siteConfig } from '@/shared/config/site'
 import type { Profile } from '@/features/profile/domain/profile'
-import {
-  trackAnamnesisConversion,
-  trackWhatsAppConversion,
-} from '@/features/ads/application/track-conversions'
+import { trackWhatsAppConversion } from '@/features/ads/application/track-conversions'
 import { buildWhatsAppUrl } from '@/shared/lib/utils'
 import { About } from '@/features/profile/ui/About'
 import { AnamnesisSheet } from '@/features/anamnesis/ui/AnamnesisSheet'
@@ -31,9 +28,7 @@ export function ProfilePage({ profile }: ProfilePageProps) {
   }
 
   function openAnamnesis() {
-    trackAnamnesisConversion({
-      onTracked: () => setAnamnesisOpen(true),
-    })
+    setAnamnesisOpen(true)
   }
 
   return (

@@ -2,10 +2,10 @@ const DEFAULT_ADS_ID = 'AW-18358820072'
 /** Rótulo da ação "Clique WhatsApp" — pode sobrescrever via VITE_GOOGLE_ADS_CONVERSION_LABEL */
 const DEFAULT_CONVERSION_LABEL = '6yxSCLasnN4cEOi5lbJE'
 /**
- * Rótulo da ação "Clique Anamnese" (categoria: Enviar formulário de lead).
- * Defina via VITE_GOOGLE_ADS_ANAMNESIS_CONVERSION_LABEL ou aqui após criar no Ads.
+ * Rótulo da ação "Enviar formulário de lead" (anamnese enviada com sucesso).
+ * Pode sobrescrever via VITE_GOOGLE_ADS_ANAMNESIS_CONVERSION_LABEL.
  */
-const DEFAULT_ANAMNESIS_CONVERSION_LABEL = ''
+const DEFAULT_ANAMNESIS_CONVERSION_LABEL = 'z2NgCIfK5OAcEOi5lbJE'
 
 type GtagFunction = (
   command: 'config' | 'event' | 'js' | 'set',
@@ -103,14 +103,13 @@ export function trackWhatsAppConversion(options: TrackOptions = {}) {
 }
 
 /**
- * Fires Google Ads conversion for Anamnese CTA (lead form category).
- * Prefer passing onTracked so the sheet opens after the conversion hit.
+ * Fires Google Ads conversion after a successful anamnesis submit (lead form).
  */
 export function trackAnamnesisConversion(options: TrackOptions = {}) {
   trackConversionEvent({
     sendTo: getAnamnesisConversionSendTo(),
-    engagementEvent: 'anamnesis_click',
-    engagementLabel: 'anamnesis_cta',
+    engagementEvent: 'generate_lead',
+    engagementLabel: 'anamnesis_submit',
     onTracked: options.onTracked,
   })
 }
