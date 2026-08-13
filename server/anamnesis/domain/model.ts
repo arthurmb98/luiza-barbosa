@@ -30,7 +30,7 @@ export type AnamnesisPayload = {
   lgpdConsent: boolean
 }
 
-export type NotificationChannelResult = 'sent' | 'logged'
+export type NotificationChannelResult = 'sent' | 'logged' | 'failed'
 
 export type SubmitAnamnesisResult = {
   email: NotificationChannelResult

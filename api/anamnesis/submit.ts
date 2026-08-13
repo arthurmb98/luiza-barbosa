@@ -41,6 +41,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const result = await useCase.execute(req.body)
+    if (result.email === 'failed' || result.whatsapp === 'failed') {
+      console.warn('[anamnesis:submit] partial delivery', result)
+    }
     res.status(200).json({
       ok: true,
       channels: {

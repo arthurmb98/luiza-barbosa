@@ -35,8 +35,8 @@ export type AnamnesisPayload = {
 export type AnamnesisSubmitSuccess = {
   ok: true
   channels: {
-    email: 'sent' | 'logged'
-    whatsapp: 'sent' | 'logged'
+    email: 'sent' | 'logged' | 'failed'
+    whatsapp: 'sent' | 'logged' | 'failed'
   }
 }
 
