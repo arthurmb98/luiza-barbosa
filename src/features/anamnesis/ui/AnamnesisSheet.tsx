@@ -43,7 +43,7 @@ export function AnamnesisSheet({ open, onOpenChange }: AnamnesisSheetProps) {
                 Anamnese enviada
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Recebemos suas informações. Em breve a Dra. Luiza entra em
+                Recebemos suas informações. Em breve a Psi. Luiza entra em
                 contato para os próximos passos.
               </p>
             </div>

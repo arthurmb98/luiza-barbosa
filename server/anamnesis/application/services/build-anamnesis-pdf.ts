@@ -75,7 +75,7 @@ function drawHeader(writer: PdfWriter) {
     color: TEAL,
   })
   writer.y -= 18
-  page.drawText('Psicóloga', {
+  page.drawText('Psicóloga e Psicanalista', {
     x: MARGIN,
     y: writer.y,
     size: 11,

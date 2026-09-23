@@ -2,8 +2,8 @@ import type { Profile } from '@/features/profile/domain/profile'
 
 export const luizaBarbosa: Profile = {
   slug: 'luiza-barbosa',
-  name: 'Dra. Luiza Barbosa',
-  profession: 'Psicóloga',
+  name: 'Psi. Luiza Barbosa',
+  profession: 'Psicóloga e Psicanalista',
   tagline: 'Acolhimento e clareza para cada fase da vida',
   specialties: [
     'Psicoterapia',
@@ -23,7 +23,7 @@ export const luizaBarbosa: Profile = {
     qrCodeLabel: 'Validação RNTP',
   },
   whatsapp: '5598981263501',
-  whatsappMessage: 'Olá, Dra. Luiza! Vi seu perfil e gostaria de agendar uma conversa.',
+  whatsappMessage: 'Olá, Psi. Luiza! Vi seu perfil e gostaria de agendar uma conversa.',
   email: 'luizatinoco2606@gmail.com',
   instagram: 'psi_luizabarbosa',
 }
